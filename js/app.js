@@ -66,7 +66,7 @@ let Player = function (x, y,){
 };
 
 // Define start position of player
-let player = new Player(200, 400);
+let player = new Player(202, 400);
 
 // Draw the player on the screen
 Player.prototype.render = function () {
@@ -106,16 +106,16 @@ player.handleInput = function (keypress) {
     this.x += 100
   }
 
-  if (keypress === "left" && this.x - 100 <= 0) {
-    this.x -= 101
+  if (keypress === "left" && this.x - 100 >= 0) {
+    this.x -= 100
   }
 
-  if (keypress === "up" && this.y - 83 <= 0) {
-    this.x -= 83
+  if (keypress === "up" && this.y - 83 >= -83) {
+    this.y -= 83
   }
 
-  if (keypress === "down" && this.y + 83 <= 600) {
-    this.x += 83
+  if (keypress === "down" && this.y + 83 <= 400) {
+    this.y += 83
   }
 
 }
