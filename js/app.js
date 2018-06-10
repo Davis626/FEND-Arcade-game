@@ -55,7 +55,13 @@ let Player = function (x, y,){
   this.sprite = 'char-horn-girl.png';
 };
 
-let player = new Player(200, 200); // Define start position of player
+// Define start position of player
+let player = new Player(200, 200);
+
+// Draw the player on the screen
+Player.prototype.render = function () {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 
 
 // This listens for key presses and sends the keys to your
