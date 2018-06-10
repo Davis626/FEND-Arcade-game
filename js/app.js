@@ -34,7 +34,7 @@ Enemy.prototype.update = function(dt) {
 
 };
 
-// Place enemy randomly
+// Place enemies randomly
 enemyPosition.forEach(function (positionY) {
     enemy = new Enemy(-100, positionY, 100 + Math.floor(Math.random() * 500));
     allEnemies.push(enemy);
@@ -83,9 +83,11 @@ player.update = function (dt) {
     }
 };
 
+/*
+ * Keypress functionality
+ */
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Event listener for keypress - provided by Udacity
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -96,3 +98,24 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// Function for moving Player
+player.handleInput = function (keypress) {
+
+  if (keypress === "right" && this.x + 100 <= 500) {
+    this.x += 100
+  }
+
+  if (keypress === "left" && this.x - 100 <= 0) {
+    this.x -= 101
+  }
+
+  if (keypress === "up" && this.y - 83 <= 0) {
+    this.x -= 83
+  }
+
+  if (keypress === "down" && this.y + 83 <= 600) {
+    this.x += 83
+  }
+
+}
