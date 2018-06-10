@@ -11,14 +11,14 @@ let enemyPosition = [60, 140, 220]; // Position for enemies on Y axis in array
 
 // Constructor function for enemy
 let Enemy = function(x, y, speed) {
+  // Object keys - position on X, Y axis, speed, image
     this.x = x;
     this.y = y;
     this.speed = speed;
     this.sprite = 'images/enemy-bug.png';
 };
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
+// Update the enemy's position
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -63,7 +63,7 @@ Player.prototype.render = function () {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Call function when player moves
+// Update the player's position
 player.update = function (dt) {
     // Reset player position after reaching the water
     if (this.y < 0) {
