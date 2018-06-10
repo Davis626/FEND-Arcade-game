@@ -56,7 +56,7 @@ let Player = function (x, y,){
 };
 
 // Define start position of player
-let player = new Player(200, 200);
+let player = new Player(200, 400);
 
 // Draw the player on the screen
 Player.prototype.render = function () {
