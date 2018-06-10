@@ -63,6 +63,16 @@ Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// Call function when player moves
+player.update = function (dt) {
+    // Reset player position after reaching the water
+    if (this.y < 0) {
+        setTimeout(() => {
+            this.resetPlayer();
+        }, 500);
+    }
+};
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
