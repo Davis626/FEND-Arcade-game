@@ -12,14 +12,16 @@ let enemyPosition = [60, 140, 220]; // Position for enemies on Y axis in array
 // Constructor function for enemy
 let Enemy = function(x, y, speed) {
   // Object keys - position on X, Y axis, speed, image
-    this.x = x;
-    this.y = y;
-    this.speed = speed;
-    this.sprite = 'images/enemy-bug.png';
+  this.x = x;
+  this.y = y;
+  this.speed = speed;
+  this.sprite = 'images/enemy-bug.png';
 };
 
 // Update the enemy's position
 Enemy.prototype.update = function(dt) {
+  this.x += this.speed * dt;
+
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -50,6 +52,7 @@ Enemy.prototype.render = function() {
 
 //Constructor function for player
 let Player = function (x, y,){
+  // Object keys - position on X, Y axis, image
   this.x = x;
   this.y = y;
   this.sprite = 'images/char-horn-girl.png';
