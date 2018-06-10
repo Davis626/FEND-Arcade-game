@@ -3,7 +3,7 @@
  */
 
 let allEnemies = [];
-let enemyPosition = [60, 140, 220]; // Position for enemies on Y axis
+let enemyPosition = [60, 140, 220]; // Position for enemies on Y axis in array
 
 /*
  * Create enemies
@@ -32,7 +32,7 @@ enemyPosition.forEach(function (positionY) {
 });
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Now write your own player class
@@ -52,7 +52,7 @@ Enemy.prototype.render = function() {
 let Player = function (x, y,){
   this.x = x;
   this.y = y;
-  this.sprite = 'char-horn-girl.png';
+  this.sprite = 'images/char-horn-girl.png';
 };
 
 // Define start position of player
@@ -60,7 +60,7 @@ let player = new Player(200, 200);
 
 // Draw the player on the screen
 Player.prototype.render = function () {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Call function when player moves
