@@ -1,3 +1,8 @@
+// Global variables
+let allEnemies = [];
+let enemyPosition = [60, 140, 220]; // Position for enemies on Y axis
+
+
 // Enemies our player must avoid
 let Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
@@ -19,6 +24,11 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 };
 
+// Place enemy randomly
+enemyPosition.forEach(function (positionY) {
+    enemy = new Enemy(-50, positionY, 100 + Math.floor(Math.random() * 500));
+    allEnemies.push(enemy);
+});
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
