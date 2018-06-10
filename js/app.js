@@ -1,18 +1,19 @@
-// Global variables
+/*
+ * Global variables
+ */
+
 let allEnemies = [];
 let enemyPosition = [60, 140, 220]; // Position for enemies on Y axis
 
+/*
+ * Create enemies
+ */
 
-// Enemies our player must avoid
+// Constructor function for enemy
 let Enemy = function(x, y, speed) {
-    // Variables applied to each of our instances go here,
     this.x = x;
     this.y = y;
     this.speed = speed;
-    // we've provided one for you to get started
-
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -43,6 +44,18 @@ Enemy.prototype.render = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
+/*
+ * Create player
+ */
+
+//Constructor function for player
+let Player = function (x, y,){
+  this.x = x;
+  this.y = y;
+  this.sprite = 'char-horn-girl.png';
+};
+
+let player = new Player(200, 200); // Define start position of player
 
 
 // This listens for key presses and sends the keys to your
