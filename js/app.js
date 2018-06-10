@@ -20,16 +20,23 @@ let Enemy = function(x, y, speed) {
 
 // Update the enemy's position
 Enemy.prototype.update = function(dt) {
+
+  // Multiply movement by the delta time (dt) parameter
+  // to ensure the game runs the same speed for all computers
   this.x += this.speed * dt;
 
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+  // Reposition enemies after running out of screen
+  if (this.x >= 505) {
+    this.x = -100;
+    this.speed = 100 + Math.floor(Math.random() * 500);
+  }
+
+
 };
 
 // Place enemy randomly
 enemyPosition.forEach(function (positionY) {
-    enemy = new Enemy(-50, positionY, 100 + Math.floor(Math.random() * 500));
+    enemy = new Enemy(-100, positionY, 100 + Math.floor(Math.random() * 500));
     allEnemies.push(enemy);
 });
 // Draw the enemy on the screen, required method for game
