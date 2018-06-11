@@ -1,6 +1,21 @@
-Arcade game
-===============================
+# Classic Arcade Game Project
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+A Browser-based classic arcade game - project of the Udacity Front-End Web Developer Nanodegree Program
+
+## Realisation
+
+Purpose of the project was to use object oriented code. Graphic animations are made with the use of canvas and a game engine provided by Udacity.
+
+## Installation
+
+1. Clone repository or download compressed files.
+2. Open 'index.html' in your browser.
+3. Play the game!
+
+Alternatively, click [here](http://htmlpreview.github.io/?https://github.com/Davis626/Arcade-game/blob/master/index.html)
+
+## Instructions
+
+Move the character using arrow keys and try to get to the water avoiding bugs along the way. At the start of the game you have 3 lifes and 0 points. Every time you reach the water, 25 points are added to the score. The goal is to get as many point as you can. When you get hit by a bug, 1 life is lost and you return to the starting position. After losing all 3 lives you will be presented with your total score. Afterwards reset the game to play again!
