@@ -3,7 +3,7 @@
  */
 
 let allEnemies = [];
-let enemyPosition = [60, 140, 220]; // Position for enemies on Y axis in array
+let enemyPosition = [58,141,224]; // Position for enemies on Y axis in array
 
 /*
  * Create enemies
@@ -73,6 +73,17 @@ Enemy.prototype.render = function() {
        this.y = 1;
        setTimeout(() => this.reset(), 500);
        game.scorePoints();
+     }
+
+     //if the player is on the same space as a enemy, bring him back home
+     if (this.y === 68 || this.y === 151 || this.y ===  234) {
+       let thisPlayer = this;
+       allEnemies.forEach(function(enemy){
+         if (enemy.x+75 > thisPlayer.x && thisPlayer.x+75 > enemy.x && thisPlayer.y === enemy.y+10)  {
+           alert();
+           thisPlayer.reset();
+         }
+       })
      }
    }
 
