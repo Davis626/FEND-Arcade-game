@@ -57,31 +57,57 @@ Enemy.prototype.render = function() {
  * Create player
  */
 
-//Constructor function for player
-let Player = function (x, y,){
-  // Object keys - position on X, Y axis, image
-  this.x = x;
-  this.y = y;
-  this.sprite = 'images/char-horn-girl.png';
-};
+ class Player {
+   constructor(x, y) {
+     this.x = x;
+     this.y = y;
+     this.sprite = 'images/char-horn-girl.png';
+   }
+
+   render() {
+     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+   }
+
+   update() {
+     if (this.y < 0) {
+       this.y = 1;
+       setTimeout(() => this.reset(), 500);
+       game.scorePoints();
+     }
+   }
+
+   reset() {
+     this.x = 202;
+     this.y = 400
+   }
+
+   handleInput(key) {
+     switch (key) {
+       case "left":
+       //if the left key is pressed, move left one column, but not off screen
+       this.x - 100 >= 0 ? this.x = this.x - 100 : undefined;
+       break;
+
+       case "right":
+       this.x + 100 <= 500 ? this.x = this.x + 100 : undefined;
+       break;
+
+       case "up":
+       this.y - 83 >= -83 ? this.y = this.y - 83 : undefined;
+       break;
+
+       case "down":
+       this.y + 83 <= 400 ? this.y = this.y + 83: undefined;
+       break;
+     }
+   }
+ }
+
 
 // Define start position of player
 let player = new Player(202, 400);
 
-// Draw the player on the screen
-Player.prototype.render = function () {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
 
-// Update the player's position
-player.update = function (dt) {
-    // Reset player position after reaching the water
-    if (this.y < 0) {
-        setTimeout(() => {
-            this.resetPlayer();
-        }, 500);
-    }
-};
 
 /*
  * Keypress functionality
@@ -98,24 +124,3 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
-// Function for moving Player
-player.handleInput = function (keypress) {
-
-  if (keypress === "right" && this.x + 100 <= 500) {
-    this.x += 100
-  }
-
-  if (keypress === "left" && this.x - 100 >= 0) {
-    this.x -= 100
-  }
-
-  if (keypress === "up" && this.y - 83 >= -83) {
-    this.y -= 83
-  }
-
-  if (keypress === "down" && this.y + 83 <= 400) {
-    this.y += 83
-  }
-
-}
