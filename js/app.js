@@ -5,6 +5,12 @@
 let allEnemies = [];
 let enemyPosition = [58,141,224]; // Position for enemies on Y axis in array
 let score = 0;
+let lives = 3;
+
+// Variables for lives on the score panel
+const livesContainer = document.querySelector(".lives");
+const heart = `<li><img src="images/Heart.png"></i></li>`;
+livesContainer.innerHTML = heart + heart + heart;
 
 /*
  * Create enemies
@@ -75,7 +81,18 @@ class Player {
       let thisPlayer = this;
       allEnemies.forEach(function(enemy){
         if (enemy.x+75 > thisPlayer.x && thisPlayer.x+75 > enemy.x && thisPlayer.y === enemy.y+10)  {
-          thisPlayer.reset();
+          thisPlayer.reset()
+          if (lives === 3) {
+            document.getElementsByClassName('mini-player')[2].remove();
+            lives -= 1;
+          } else if (lives === 2) {
+            document.getElementsByClassName('mini-player')[1].remove();
+            lives -= 1;
+          } else if (lives === 1) {
+            document.getElementsByClassName('mini-player')[0].remove();
+            alert('Game Over!!!\nYou Scored ' + score + ' Points');
+            location.reload();
+        };
         }
       })
     }
