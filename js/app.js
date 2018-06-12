@@ -4,6 +4,7 @@
 
 let allEnemies = [];
 let enemyPosition = [58,141,224]; // Position for enemies on Y axis in array
+let score = 0;
 
 /*
  * Create enemies
@@ -62,10 +63,11 @@ class Player {
 
   update() {
     //Return player to starting position and add points after reaching the water
-    if (this.y < 0) {
-      this.y = 1;
+    if (this.y < 0 && this.y != -2) {
+      this.y = -2 //Prevents getting more than expected points
       setTimeout(() => this.reset(), 500);
-      game.scorePoints();
+      score += 25;
+      document.querySelector('.score').innerHTML = score;
     }
 
     //Check for collision with enemy bugs
