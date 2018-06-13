@@ -3,10 +3,11 @@
 ## Table of Contents
 
 A Browser-based classic arcade game - project of the Udacity Front-End Web Developer Nanodegree Program
-
-## Realisation
-
 Purpose of the project was to use object oriented code. Graphic animations are made with the use of canvas and a game engine provided by Udacity.
+
+## Dependencies
+
+- Google font: Coda (https://fonts.googleapis.com/css?family=Coda)
 
 ## Installation
 
