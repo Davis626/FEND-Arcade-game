@@ -10,48 +10,53 @@ header h1 {
     width: 100%;
     padding-top: 20px;
     font-family: 'Coda', cursive;
-    font-size: 1.5em;
+    font-size: 2.2em;
 }
 
 .score-panel {
-    display: flex;;
-    flex-wrap: nowrap;
-    justify-content: center;
+    display: flex;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -60px;
-    margin-top: 30px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: -50px;
 }
 
 .title-score {
-    width: 30%;
-    margin-right: -100px;
+    width: 50%;
+    margin-right: -150px;
     font-family: 'Coda', cursive;
     font-size: 1.3em;
 }
 
 .score {
-    width: 30%;
-    font-family: 'Press Start 2P', cursive;
+    width: 50%;
+    font-family: 'Coda', cursive;
     font-size: 1.3em;
 
 }
 
 .title-lives {
-    width: 30%;
-    font-family: 'Press Start 2P', cursive;
+    width: 50%;
+    font-family: 'Coda', cursive;
     font-size: 1.3em;
 }
 
 
 .lives {
-    list-style: none;
-    display: inline-block;
-    justify-content: center;
+    width: 50%;
+    padding-top: 10px;
+    margin-left: -150px;
+    align-items: right;
 }
 
-.lives img {
-    width: 25%;
-    heigth: 25%;
+.lives ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.heart img {
+    height: 50px;
+    margin-top: -150px
 }
