@@ -7,11 +7,6 @@ let enemyPosition = [58,141,224]; // Position for enemies on Y axis in array
 let score = 0;
 let lives = 3;
 
-// Variables for lives on the score panel
-const livesContainer = document.querySelector(".lives");
-const heart = `<img src="images/Heart.png">`;
-livesContainer.innerHTML = heart + heart + heart;
-
 /*
  * Create enemies
  */
@@ -71,7 +66,7 @@ class Player {
     //Return player to starting position and add points after reaching the water
     if (this.y < 0 && this.y != -2) {
       this.y = -2 //Prevents getting more than expected points
-      setTimeout(() => this.reset(), 500);
+      setTimeout(() => this.reset(), 300);
       score += 25;
       document.querySelector('.score').innerHTML = score;
     }
@@ -83,15 +78,14 @@ class Player {
         if (enemy.x+75 > thisPlayer.x && thisPlayer.x+75 > enemy.x && thisPlayer.y === enemy.y+10)  {
           thisPlayer.reset()
           if (lives === 3) {
-            document.getElementsByClassName('mini-player')[2].remove();
+            document.getElementsByClassName('heart')[2].remove();
             lives -= 1;
           } else if (lives === 2) {
-            document.getElementsByClassName('mini-player')[1].remove();
+            document.getElementsByClassName('heart')[1].remove();
             lives -= 1;
           } else if (lives === 1) {
-            document.getElementsByClassName('mini-player')[0].remove();
+            document.getElementsByClassName('heart')[0].remove();
             alert('Game Over!!!\nYou Scored ' + score + ' Points');
-            location.reload();
         };
         }
       })
