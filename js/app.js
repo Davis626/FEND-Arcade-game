@@ -49,7 +49,7 @@ Enemy.prototype.render = function() {
  * Create player
  */
 
-// creating player class
+// Creating player class
 class Player {
   // Object keys - position on X, Y axis, image
   constructor(x, y) {
@@ -73,6 +73,7 @@ class Player {
     }
 
     //Check for collision with enemy bugs
+    //If the player and bug images overlap, there is a collision detected and plater loses a life
     if (this.y === 68 || this.y === 151 || this.y ===  234) {
       let thisPlayer = this;
       allEnemies.forEach(function(enemy){
@@ -99,7 +100,7 @@ class Player {
     this.y = 400
   }
 
-  //Move player inside canvas
+  //Move player inside canvas using keypress
   handleInput(key) {
     switch (key) {
       case "left":
@@ -148,7 +149,7 @@ restartBtnModal.addEventListener("click", function() {
   // Hide the modal
   modal.style.top = "-200%";
 
-  //Reset all related variables using the "location reload" method
+  //Reload the page and reset all related variables using the "location reload" method
   location.reload();
 })
 
