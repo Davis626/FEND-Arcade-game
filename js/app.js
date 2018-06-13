@@ -9,7 +9,7 @@ let lives = 3;
 
 // Variables for lives on the score panel
 const livesContainer = document.querySelector(".lives");
-const heart = `<li><img src="images/Heart.png"></i></li>`;
+const heart = `<img src="images/Heart.png">`;
 livesContainer.innerHTML = heart + heart + heart;
 
 /*

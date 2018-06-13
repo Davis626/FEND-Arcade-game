@@ -1,3 +1,57 @@
 body {
+    min-width: 600px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+}
+
+header h1 {
+    width: 100%;
+    padding-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5em;
+}
+
+.score-panel {
+    display: flex;;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -60px;
+    margin-top: 30px;
+}
+
+.title-score {
+    width: 30%;
+    margin-right: -100px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.3em;
+}
+
+.score {
+    width: 30%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.3em;
+
+}
+
+.title-lives {
+    width: 30%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.3em;
+}
+
+
+.lives {
+    list-style: none;
+    display: inline-block;
+    justify-content: center;
+}
+
+.lives img {
+    width: 25%;
+    heigth: 25%;
 }
