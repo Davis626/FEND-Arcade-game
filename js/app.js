@@ -6,6 +6,7 @@ let allEnemies = [];
 let enemyPosition = [58,141,224]; // Position for enemies on Y axis in array
 let score = 0;
 let lives = 3;
+const modal = document.querySelector(".modal");
 
 /*
  * Create enemies
@@ -85,7 +86,7 @@ class Player {
             lives -= 1;
           } else if (lives === 1) {
             document.getElementsByClassName('heart')[0].remove();
-            alert('Game Over!!!\nYou Scored ' + score + ' Points');
+            modalPop();
         };
         }
       })
@@ -122,6 +123,34 @@ class Player {
 
 // Define start position of player
 let player = new Player(202, 400);
+
+/*
+* Game Over Message
+*/
+
+function modalPop() {
+
+  // Display the modal
+  modal.style.top = "0";
+
+  // Add score to the Modal
+  const totalScore = document.querySelector("#total-score");
+  totalScore.innerHTML = score;
+}
+
+/*
+ * Restart the game in modal
+ */
+
+const restartBtnModal = document.querySelector(".play-again");
+restartBtnModal.addEventListener("click", function() {
+
+  // Hide the modal
+  modal.style.top = "-200%";
+
+  //Reset all related variables using the "location reload" method
+  location.reload();
+})
 
 /*
  * Event listener for keypress - provided by Udacity
